@@ -1,6 +1,6 @@
 const client = require("./../../config/groq");
 const chatPrompt = require("./../../prompts/chat.prompt");
-const aiReply = async (chat) => {
+const chatService = async (chat) => {
   const chatCompletion = await client.chat.completions.create({
     messages: [{ role: "user", content: chat + chatPrompt }],
     model: "openai/gpt-oss-20b",
@@ -8,4 +8,4 @@ const aiReply = async (chat) => {
   return chatCompletion.choices[0].message;
 };
 
-module.exports = aiReply;
+module.exports = chatService;

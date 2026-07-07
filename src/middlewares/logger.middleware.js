@@ -1,16 +1,16 @@
 const logger = (req, res, next) => {
   req.time = Date(Date.now().toString());
   console.log(
-    "Request method :",
+    "method :",
     req.method,
     "\n",
-    "Request path :",
+    "path :",
     req.path,
     "\n",
-    "Request HostName :",
+    "HostName :",
     req.hostname,
     "\n",
-    "Request path :",
+    "path :",
     req.time,
     "\n\n"
   );
