@@ -27,7 +27,16 @@ const deleteTracker = async (id) => {
   }
 };
 const updateTracker = async (id, data) => {
-  console.log(data);
+  const response = await Tracker.findByIdAndUpdate(id, {
+    $set: {
+      company: data.company,
+      role: data.role,
+      date: data.date,
+      stage: data.stage,
+      action: data.action,
+    },
+  });
+  console.log(response);
 };
 
 module.exports = { getAllTracker, addTracker, deleteTracker, updateTracker };
