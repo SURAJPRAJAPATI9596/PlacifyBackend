@@ -8,7 +8,7 @@ const emailRoutes = require("./routes/email.routes.js");
 const trackerRoutes = require("./routes/tracker.routes.js");
 const codingRoutes = require("./routes/coding.routes.js");
 app.use(
-  cors({ origin: ["https://placifyp.netlify.app/", " http://localhost:5173/"] })
+  cors({ origin: ["https://placifyp.netlify.app", "http://localhost:5173"] })
 );
 
 app.use(logger);
