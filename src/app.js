@@ -7,9 +7,7 @@ const aiRoutes = require("./routes/ai.routes.js");
 const emailRoutes = require("./routes/email.routes.js");
 const trackerRoutes = require("./routes/tracker.routes.js");
 const codingRoutes = require("./routes/coding.routes.js");
-app.use(
-  cors({ origin: "https://6a524352dba88785c12a9e85--placifyp.netlify.app/" })
-);
+app.use(cors({ origin: "https://placifyp.netlify.app/" }));
 
 app.use(logger);
 app.use(express.json());
