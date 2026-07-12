@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+//atlas db config
 const connectDB = async () => {
   try {
     await mongoose.connect(process.env.ATLASDB_URL);
