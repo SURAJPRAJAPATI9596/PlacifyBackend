@@ -9,6 +9,10 @@ const trackerRoutes = require("./routes/tracker.routes.js");
 const codingRoutes = require("./routes/coding.routes.js");
 const authRoutes = require("./routes/auth.routes.js");
 
+//cors
+app.use(
+  cors({ origin: ["https://placifyp.netlify.app", "http://localhost:5173"] })
+);
 app.use(logger);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -18,10 +22,6 @@ app.use("/api/v1/email", emailRoutes);
 app.use("/api/v1/trackers", trackerRoutes);
 app.use("/api/v1/coding", codingRoutes);
 app.use("/api/v1/auth", authRoutes);
-//cors
-app.use(
-  cors({ origin: ["https://placifyp.netlify.app", "http://localhost:5173"] })
-);
 app.use(errorHandler);
 
 module.exports = app;
