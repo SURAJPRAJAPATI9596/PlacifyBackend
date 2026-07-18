@@ -23,10 +23,12 @@ passport.use(
     }
   })
 );
-passport.serializeUser((user, done) => done(null, user.id));
+passport.serializeUser((user, done) => {
+  return done(null, user.id);
+});
 passport.deserializeUser(async (id, done) => {
   try {
-    const user = await User.findById(id);
+    const user = await User.findById(id).select("-password");
     done(null, user);
   } catch (err) {
     done(err);

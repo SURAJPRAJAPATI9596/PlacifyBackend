@@ -1,5 +1,5 @@
 const logger = (req, res, next) => {
-  req.time = Date(Date.now().toString());
+  req.time = new Date().toTimeString().split(" ")[0];
   console.log(
     "method :",
     req.method,
@@ -10,7 +10,7 @@ const logger = (req, res, next) => {
     "HostName :",
     req.hostname,
     "\n",
-    "path :",
+    "Time :",
     req.time,
     "\n\n"
   );
